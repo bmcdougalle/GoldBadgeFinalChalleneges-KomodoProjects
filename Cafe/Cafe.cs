@@ -9,7 +9,9 @@ namespace Cafe
     public class MenuItem
 
     {
-        public int IdNumber { get; set; }
-        public string CustName { get; set; }
+        public int ItemNumber { get; set; }
+        public string ItemName { get; set; }
+        public string Description { get; set; }
+        public int Price { get; set; }
     }
 }
