@@ -16,5 +16,11 @@ namespace Cafe
         {
             _MenuItems.Add(item);
         }
+
+        //read
+        public List<MenuItem> GetMenuItems()
+        {
+            return _MenuItems;
+        }
     }
 }
