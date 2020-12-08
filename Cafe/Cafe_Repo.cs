@@ -6,21 +6,61 @@ using System.Threading.Tasks;
 
 namespace Cafe
 {
-    class Cafe_Repo
+    public class Cafe_Repo
     {
-        private readonly List<MenuItem> _MenuItems = new List<MenuItem>();
+        private readonly List<MenuItem> _menuItems = new List<MenuItem>();
+       
 
         //create
 
         public void CreateItem(MenuItem item)
         {
-            _MenuItems.Add(item);
+            _menuItems.Add(item);
         }
 
         //read
         public List<MenuItem> GetMenuItems()
         {
-            return _MenuItems;
+            return _menuItems;
+        }
+
+        //update
+        public bool DeleteItems(string name)
+        {
+            MenuItem menuItem = GetItem(name);
+            {
+                if(menuItem == null)
+                {
+                    return false;
+                }
+
+                int intialCount = _menuItems.Count;
+                _menuItems.Remove(menuItem);
+
+                if(intialCount > _menuItems.Count)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            } 
+        }
+
+
+
+        //helpermethod
+        public MenuItem GetItem(string name)
+        {
+            foreach (var item in _menuItems)
+            {
+                if(item.ItemName == name)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
     }
 }

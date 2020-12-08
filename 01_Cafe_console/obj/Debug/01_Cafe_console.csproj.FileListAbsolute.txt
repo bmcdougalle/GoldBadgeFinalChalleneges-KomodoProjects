@@ -1,0 +1,10 @@
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\bin\Debug\01_Cafe_console.exe.config
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\bin\Debug\01_Cafe_console.exe
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\bin\Debug\01_Cafe_console.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\bin\Debug\Cafe.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\bin\Debug\Cafe.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\obj\Debug\01_Cafe_console.csprojAssemblyReference.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\obj\Debug\01_Cafe_console.csproj.CoreCompileInputs.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\obj\Debug\01_Cafe_console.csproj.CopyComplete
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\obj\Debug\01_Cafe_console.exe
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\01_Cafe_console\obj\Debug\01_Cafe_console.pdb

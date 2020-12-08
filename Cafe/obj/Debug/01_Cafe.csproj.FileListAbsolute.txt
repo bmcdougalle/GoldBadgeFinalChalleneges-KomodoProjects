@@ -1,0 +1,6 @@
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\Cafe\bin\Debug\Cafe.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\Cafe\bin\Debug\Cafe.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\Cafe\obj\Debug\01_Cafe.csprojAssemblyReference.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\Cafe\obj\Debug\01_Cafe.csproj.CoreCompileInputs.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\Cafe\obj\Debug\Cafe.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\Cafe\obj\Debug\Cafe.pdb

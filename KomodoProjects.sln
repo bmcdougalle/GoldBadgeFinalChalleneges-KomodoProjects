@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Cafe", "Cafe\01_Cafe.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Cafe_console", "01_Cafe_console\01_Cafe_console.csproj", "{BD248507-AD71-4A0A-8BF1-B4B84281B71C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_cafe_tests", "01_cafe_tests\01_cafe_tests.csproj", "{588657C1-7666-4298-A99B-FA3E94F60873}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Cafe_tests", "01_cafe_tests\01_Cafe_tests.csproj", "{588657C1-7666-4298-A99B-FA3E94F60873}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
