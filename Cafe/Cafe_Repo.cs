@@ -9,7 +9,6 @@ namespace Cafe
     public class Cafe_Repo
     {
         private readonly List<MenuItem> _menuItems = new List<MenuItem>();
-       
 
         //create
 
@@ -25,9 +24,27 @@ namespace Cafe
         }
 
         //update
-        public bool DeleteItems(string name)
+        public bool UpdateMenuItems(int itemNumber, MenuItem newItem)
         {
-            MenuItem menuItem = GetItem(name);
+            MenuItem oldItem = GetItem(itemNumber);
+            if(oldItem != null)
+            {
+                oldItem.ItemNumber = newItem.ItemNumber;
+                oldItem.ItemName = newItem.ItemName;
+                oldItem.Description = newItem.Description;
+                oldItem.Price = newItem.Price;
+                oldItem.Ingredients = newItem.Ingredients;
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool DeleteItems(int itemNumber)
+        {
+            MenuItem menuItem = GetItem(itemNumber);
             {
                 if(menuItem == null)
                 {
@@ -51,16 +68,31 @@ namespace Cafe
 
 
         //helpermethod
-        public MenuItem GetItem(string name)
+        public MenuItem GetItem(int idNumber)
         {
             foreach (var item in _menuItems)
             {
-                if(item.ItemName == name)
+                if(item.ItemNumber == idNumber)
                 {
                     return item;
                 }
             }
             return null;
         }
-    }
+
+        public List<MenuItem> GetIngredients()
+        {
+            List<MenuItem> items = new List<MenuItem>();
+            foreach (var item in _menuItems)
+            {
+                if(item.Ingredients == item.Ingredients)
+                {
+                    
+                }
+            }
+        }
+        
+
+	}
 }
+

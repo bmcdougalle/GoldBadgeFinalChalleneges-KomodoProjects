@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace _01_cafe_tests
+namespace _02_ClaimsDepartment_Tests
 {
     [TestClass]
     public class UnitTest1
