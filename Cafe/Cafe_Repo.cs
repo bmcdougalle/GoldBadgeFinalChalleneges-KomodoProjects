@@ -80,17 +80,7 @@ namespace Cafe
             return null;
         }
 
-        public List<MenuItem> GetIngredients()
-        {
-            List<MenuItem> items = new List<MenuItem>();
-            foreach (var item in _menuItems)
-            {
-                if(item.Ingredients == item.Ingredients)
-                {
-                    
-                }
-            }
-        }
+        
         
 
 	}

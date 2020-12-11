@@ -77,12 +77,28 @@ namespace _01_Cafe_console
             string doubleAsString = Console.ReadLine();
             menuItem.Price = double.Parse(doubleAsString);
 
-            Console.WriteLine("Enter The Ingredients");
-            string listOfIngredients = Console.ReadLine();
-            menuItem.Ingredients.Add(listOfIngredients);
+            Console.Clear();
+            List<string> Ingredients = new List<string>();
+            bool hasIngredients = false;
+            while (hasIngredients == false)
+            {
+                Console.WriteLine("Would you like to attach a list of ingredients to the item?");
+                string input = Console.ReadLine();
+                if (input == "Y" || input == "y")
+                {
+                    Console.WriteLine("Enter The Ingredients");
+                    string listOfIngredients = Console.ReadLine();
+                    menuItem.Ingredients.Add(listOfIngredients);
+                }
+                if(input == "N" || input == "n")
+                {
+                    _cafe_Repo.CreateItem(menuItem);
+                    hasIngredients = true;
+                }
+            }
 
 
-            _cafe_Repo.CreateItem(menuItem);
+            
         }
         private void ViewAllItems()
         {
@@ -94,9 +110,14 @@ namespace _01_Cafe_console
                                   $"Item Name:  {menuItem.ItemName}\n\n" +
                                   $"Item Decription: {menuItem.Description}\n\n" +
                                   $"Item Price: {menuItem.Price}\n\n" +
-                                  $"Item Ingredients: {menuItem.Ingredients}\n" +
-                                  $"***************************************\n" +
-                                  $"***************************************");
+
+                                  $"***************************************\n"); 
+                                  foreach (var item in menuItem.Ingredients)
+                {
+                    Console.WriteLine($"Item Ingredients: {item}\n");
+                }
+
+                Console.WriteLine($"***************************************");
             }
         }
         private void UpdateMenuItems()

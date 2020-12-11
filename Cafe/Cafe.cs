@@ -13,7 +13,7 @@ namespace Cafe
         public string ItemName { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
-        public List<string> Ingredients { get; set; }
+        public List<string> Ingredients { get; set; } = new List<string>();
 
         public MenuItem() { }
 
