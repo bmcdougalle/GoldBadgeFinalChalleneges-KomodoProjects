@@ -30,7 +30,7 @@ namespace _02_ClaimsDepartment_Console
                 switch (userInput)
                 {
                     case "1":
-                        //ViewAllClaims
+                        ShowAllClaims();
                         break;
                     case "2":
                         //TakeCareOfNExtClaim
@@ -47,6 +47,10 @@ namespace _02_ClaimsDepartment_Console
                 Console.ReadKey();
                 Console.Clear();
             }
+        }
+        private void ShowAllClaims()
+        {
+
         }
    }
 }

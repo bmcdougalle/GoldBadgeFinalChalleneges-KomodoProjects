@@ -8,9 +8,17 @@ namespace ClaimsDepartment
 {
     public class Claims_repo
     {
-        
+       private readonly Queue<Claims> _Claims = new Queue<Claims>();
         //create
+        public void AddAClaim(Claims claim)
+        {
+            _Claims.Enqueue(claim);
+        } 
         //read
+        public void ShowNextClaim()
+        {
+
+        }
         //update
         //delete
     }

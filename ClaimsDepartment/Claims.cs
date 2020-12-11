@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace ClaimsDepartment
 {
+   public enum ClaimType
+   {
+        Car = 1,
+        Home,
+        Theft
+   }
     public class Claims
     {
         public int ClaimID { get; set; }
-        public string ClaimType { get; set; }
+        public ClaimType TypeOfClaim { get; set; }
         public string Description { get; set; }
         public decimal ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
@@ -18,10 +24,10 @@ namespace ClaimsDepartment
 
 
         public Claims() { }
-        public Claims(int claimId, string claimType, string description, decimal claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
+        public Claims(int claimId,  ClaimType typeOfClaim, string description, decimal claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
         {
             ClaimID = claimId;
-            ClaimType = claimType;
+            TypeOfClaim = typeOfClaim;
             Description = description;
             ClaimAmount = claimAmount;
             DateOfIncident = dateOfIncident;
