@@ -24,7 +24,7 @@ namespace ClaimsDepartment
 
 
         public Claims() { }
-        public Claims(int claimId,  ClaimType typeOfClaim, string description, decimal claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
+        public Claims(int claimId,  ClaimType typeOfClaim, string description, decimal claimAmount, DateTime dateOfIncident, DateTime dateOfClaim, bool isValid)
         {
             ClaimID = claimId;
             TypeOfClaim = typeOfClaim;
@@ -32,6 +32,7 @@ namespace ClaimsDepartment
             ClaimAmount = claimAmount;
             DateOfIncident = dateOfIncident;
             DateOfClaim = dateOfClaim;
+            IsValid = isValid;
         }
     }
 }

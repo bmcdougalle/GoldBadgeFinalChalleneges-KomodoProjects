@@ -1,0 +1,6 @@
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\ClaimsDepartment\bin\Debug\ClaimsDepartment.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\ClaimsDepartment\bin\Debug\ClaimsDepartment.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\ClaimsDepartment\obj\Debug\02_ClaimsDepartment.csprojAssemblyReference.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\ClaimsDepartment\obj\Debug\02_ClaimsDepartment.csproj.CoreCompileInputs.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\ClaimsDepartment\obj\Debug\ClaimsDepartment.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\ClaimsDepartment\obj\Debug\ClaimsDepartment.pdb
