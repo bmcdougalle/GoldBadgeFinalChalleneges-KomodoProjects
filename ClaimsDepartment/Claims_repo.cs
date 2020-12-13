@@ -23,7 +23,7 @@ namespace ClaimsDepartment
 
         public bool UpdateClaim(int claimId, Claims claim)
         {
-            Claims oldClaim = GetClaimByID(claimId)
+            Claims oldClaim = GetClaimByID(claimId);
             if(oldClaim != null)
             {
                 oldClaim.ClaimID = claim.ClaimID;

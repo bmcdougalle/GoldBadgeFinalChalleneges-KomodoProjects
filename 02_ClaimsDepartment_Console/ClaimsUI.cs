@@ -13,6 +13,7 @@ namespace _02_ClaimsDepartment_Console
 
         public void Run()
         {
+            SeedList();
             Menu();
         }
 
@@ -33,7 +34,7 @@ namespace _02_ClaimsDepartment_Console
                         ShowAllClaims();
                         break;
                     case "2":
-                        //TakeCareOfNExtClaim
+                        TakeCareOfNextClaim();
                         break;
                     case "3":
                         EnterANewClaim();
@@ -51,31 +52,61 @@ namespace _02_ClaimsDepartment_Console
         private void ShowAllClaims()
         {
             Console.Clear();
-            Queue<Claims> claims = claims_Repo.ViewClaims();
-            var header = string.Format("{ 0, 8} { 1, 8} { 2, 35}  { 3, 10} { 4, 20} {5, 20} {6, 15}", "Claim ID", "Claim Type", "Claim Description", "Claim Amount", "Date Of Incident", "Date Of Claim", "Is this A Valid Claim?");
-            Console.WriteLine(header);
-            foreach (var claim in claims)
+            Queue<Claims> _claims = claims_Repo.ViewClaims();
+            string[] headerColumns = { "Claim ID", "Claim Type", "Claim Description", "Claim Amount", "Date Of Incident", "Date Of Claim", "Is This A Valid Claim?" };
+            //Console.WriteLine("{0, 8} {1, 8} {2, 35}  {3, 10} {4, 20} {5, 20} {6, 15}", headerColumns[0], headerColumns[1], headerColumns[2], headerColumns[3], headerColumns[4], headerColumns[5], headerColumns[6]);
+            Console.WriteLine("{0,10} {1, 20} {2,30}  {3, 10} {4, 25} {5, 25} {6, 35}", headerColumns[0], headerColumns[1], headerColumns[2], headerColumns[3], headerColumns[4], headerColumns[5], headerColumns[6]);
+            //Console.WriteLine(header);
+            foreach (var claim in _claims)
             {
-                var claimData = string.Format("{ 0, 8} { 1, 8}  { 2, 35} { 3, 10} { 4, 20} { 5, 20}    { 6, 15} ", claim.ClaimID, claim.TypeOfClaim, claim.Description, claim.ClaimAmount, claim.DateOfIncident.Date.ToString("d"), claim.DateOfClaim.Date.ToString("d"), claim.IsValid);
-                Console.WriteLine(claimData);
+                int id = claim.ClaimID;
+                ClaimType type = claim.TypeOfClaim;
+                string description = claim.Description;
+                decimal amount = claim.ClaimAmount;
+                DateTime dateOfIncident = claim.DateOfIncident;
+                DateTime dateOfClaim = claim.DateOfClaim;
+                bool isValid = claim.IsValid;
+
+
+                Console.WriteLine($"{id,10} { type,20}  { description,30} { amount,10} { dateOfIncident,30} { dateOfClaim,30} { isValid,15}");
+                
                
             }
             
         }
         private void TakeCareOfNextClaim()
         {
-            Queue<Claims> claims = new Queue<Claims>();
-            while (true)
+            Queue<Claims> claims = claims_Repo.ViewClaims();
+            Claims claim = claims.Peek();
+            Console.WriteLine($"Claim Id: {claim.ClaimID} \n" +
+                              $"Claim Type: {claim.TypeOfClaim}\n" +
+                              $"Claim Description: {claim.Description}\n" +
+                              $"Claim Amount: {claim.ClaimAmount}\n" +
+                              $"Date Of Incident: {claim.DateOfIncident}\n" +
+                              $"Date Of Claim: {claim.DateOfClaim}\n" +
+                              $"Is This Claim Valid?: {claim.IsValid}");
+            Console.WriteLine("Would you like to take care of this claim?");
+            string inputChoice = Console.ReadLine();
+            if(inputChoice == "y" || inputChoice == "Y")
             {
-
+                claims.Dequeue();
+                Menu();
             }
-            Claims claimsToTakeOF = claims.Dequeue();
+            else if(inputChoice == "n" || inputChoice == "N")
+            {
+                Menu();
+            }
+            else
+            {
+                Console.WriteLine("Please Enter a valid Response");
+            }
+            
         }
         private void EnterANewClaim()
         {
             Console.Clear();
             Claims claim = new Claims();
-            Queue<Claims> _Claims= new Queue<Claims>();
+            //Queue<Claims> _Claims= new Queue<Claims>();
 
             Console.WriteLine("Enter The Claim ID");
             string userInput = Console.ReadLine();
@@ -88,15 +119,10 @@ namespace _02_ClaimsDepartment_Console
                 }
                 else
                 {
-                    Console.WriteLine("That was not a recognized number");
+                    claim.ClaimID = claimId;
                 }
-                Console.ReadLine();
             }
-            else
-            {
-                Console.WriteLine("Sorry was not a valid Input");
-            }
-            claim.ClaimID = claimId;
+           
 
             bool validInput = false;
             int validSelection = 0;
@@ -126,12 +152,11 @@ namespace _02_ClaimsDepartment_Console
             claim.Description = Console.ReadLine();
 
             bool validAmount = false;
-            decimal amount;
             while (!validAmount)
             {
                 Console.WriteLine("Please Enter the amount of the Claim");
                 string clAmount = Console.ReadLine();
-                if(!decimal.TryParse(clAmount, out amount))
+                if (!decimal.TryParse(clAmount, out decimal amount))
                 {
                     Console.WriteLine("Please enter a Valid Amount");
                 }
@@ -143,12 +168,11 @@ namespace _02_ClaimsDepartment_Console
             }
 
             bool validDate = false;
-            DateTime incidentDate;
             while (!validDate)
             {
-                Console.WriteLine("Please enter the Date and Time of incident (yyyy/mm/dd 00:00)");
+                Console.WriteLine("Please enter the Date and Time of incident (yyyy/mm/dd)");
                 string mDateTime = Console.ReadLine();
-                if(!DateTime.TryParse(mDateTime, out incidentDate))
+                if (!DateTime.TryParse(mDateTime, out DateTime incidentDate))
                 {
                     Console.WriteLine("Not a Valid input");
                 }
@@ -160,12 +184,11 @@ namespace _02_ClaimsDepartment_Console
             }
 
             bool validDateOfClaim = false;
-            DateTime dateofClaim;
             while (!validDateOfClaim)
             {
                 Console.WriteLine("Please enter the Date of The Claim ex.(yyyy/mm/dd");
                 string inputDateOfClaim = Console.ReadLine();
-                if(!DateTime.TryParse(inputDateOfClaim, out dateofClaim))
+                if (!DateTime.TryParse(inputDateOfClaim, out DateTime dateofClaim))
                 {
                     Console.WriteLine("Not a Valid Input");
                 }
@@ -197,12 +220,25 @@ namespace _02_ClaimsDepartment_Console
 
                 }
             }
-            _Claims.Enqueue(claim);
+            claims_Repo.AddAClaim(claim);
             
             
             
 
 
+        }
+
+        private void SeedList()
+        {
+            Claims claim1 = new Claims(1, ClaimType.Car, "Collision: font end damage", 5000.00m, DateTime.Parse("2020 / 02 / 05"), DateTime.Parse("2020 / 02 / 27"), true);
+            Claims claim2 = new Claims(2, ClaimType.Theft, "Car Broken into stolen Radio", 600.00m, DateTime.Parse("2019 /05 / 05"), DateTime.Parse("2019 /05 / 31"), true);
+            Claims claim3 = new Claims(3, ClaimType.Home, "Basement Flooded", 10000.00m, DateTime.Parse("2020 / 08 / 10"), DateTime.Parse("2020 / 08 / 15"), true);
+            Claims claim4 = new Claims(4, ClaimType.Car, "simple fender bender", 600.00m, DateTime.Parse("2020 / 09/ 01"), DateTime.Parse("2020 / 10 / 02"), false);
+
+            claims_Repo.AddAClaim(claim1);
+            claims_Repo.AddAClaim(claim2);
+            claims_Repo.AddAClaim(claim3);
+            claims_Repo.AddAClaim(claim4);
         }
    }
 }
