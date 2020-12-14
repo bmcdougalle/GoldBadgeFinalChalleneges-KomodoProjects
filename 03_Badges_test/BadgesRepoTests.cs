@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace _02_ClaimsDepartment_Tests
+namespace _03_Badges_test
 {
     [TestClass]
-    public class UnitTest1
+    public class BadgesRepoTests
     {
         [TestMethod]
         public void TestMethod1()
@@ -12,3 +12,4 @@ namespace _02_ClaimsDepartment_Tests
         }
     }
 }
+   
