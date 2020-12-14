@@ -1,6 +1,6 @@
-## Welcome To Komodo Management ©
+## Welcome To Komodo Management Systems ©
 。.:*・°°★.。.:*・°☆.。.:*・°☆
-**This series of console apps will improve the functionality of certain Komodo Departments**:*:。.:*:・'゜☆。
+**This series of console apps will improve the functionality of certain Komodo Departments.**:*:。.:*:・'゜☆。
 ******
 :*:。.:*:・'゜☆。Komodo Cafe: The first console app in the series takes a new approach to sensibility for the cafe workers.  It's easy to use and does wonders for the Menu.   Customer satisfaction Gaurenteed: ✔:*:。.:*:・'゜☆。
 **********************
