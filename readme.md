@@ -10,7 +10,7 @@
 ***
 
 Here is a link to the Repo on [Github](https://github.com/bmcdougalle/GoldBadgeFinalChalleneges-KomodoProjects "Komodo Management System") 😃..  
-### Here is a small outLine of the Files
+### Here is a small outline of the Files
 
 
   01_Cafe..  
