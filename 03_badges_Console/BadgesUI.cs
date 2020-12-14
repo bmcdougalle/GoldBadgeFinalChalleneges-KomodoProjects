@@ -189,6 +189,16 @@ namespace _03_badges_Console
         }
         private void ViewAllBadges()
         {
+            Console.Clear();
+           Dictionary<int, Badges> _badges = badges_Repo.ShowAllBadges();
+            string[] headerColumns = { "BadgeId", "Door Access" };
+            Console.WriteLine("{0,10} {1, 20}", headerColumns[0], headerColumns[1]);
+            foreach(var badge in _badges)
+            {
+                
+                Console.WriteLine("{0,10} {1, 20}");
+            }
+
 
         }
         private void SeedList()
