@@ -23,7 +23,6 @@ namespace _03_Badges_Repo
             Badges oldBadge = GetBadgeById(badgeId);
             if(oldBadge != null)
             {
-                oldBadge.BadgeID = newBadge.BadgeID;
                 oldBadge.Doors = newBadge.Doors;
 
                 return true;
