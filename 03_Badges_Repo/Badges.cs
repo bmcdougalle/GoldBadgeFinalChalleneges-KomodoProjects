@@ -18,5 +18,12 @@ namespace _03_Badges_Repo
             BadgeID = badgeId;
             Doors = doors;
         }
+
+        public Badges(List<string> doors)
+        {
+            
+            Doors = doors;
+        }
+
     }
 }

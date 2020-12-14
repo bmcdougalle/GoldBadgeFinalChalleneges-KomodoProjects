@@ -36,6 +36,7 @@ namespace _01_cafe_tests
         [TestMethod]
         public void TestReadMethod()
         {
+
             MenuItem menu = new MenuItem();
             Cafe_Repo cafe = new Cafe_Repo();
 
@@ -48,7 +49,8 @@ namespace _01_cafe_tests
         [TestMethod]
         public void TestUpdateMethod()
         {
-
+            MenuItem item = new MenuItem();
+            Cafe_Repo cafe = new Cafe_Repo();
         }
     }
 }

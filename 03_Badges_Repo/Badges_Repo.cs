@@ -8,11 +8,13 @@ namespace _03_Badges_Repo
 {
     public class Badges_Repo
     {
-        private readonly Dictionary<int, Badges> _Badges = new Dictionary<int, Badges>(); 
-
-        public void AddBadgesToDict(int badgeId, Badges badge)
+        private readonly Dictionary<int, Badges> _Badges = new Dictionary<int, Badges>();
+        int Count = 0;
+        public void AddBadgesToDict( Badges badge)
         {
-            _Badges.Add(badgeId, badge);
+            Count++;
+            badge.BadgeID = Count;
+            _Badges.Add(Count, badge);
         }
         public Dictionary<int, Badges> ShowAllBadges()
         {
@@ -67,6 +69,19 @@ namespace _03_Badges_Repo
                 }
             }
             return null;
+        }
+
+        public bool RemoveDoor(Badges badges,string doorName)
+        {
+            foreach (var doorN in badges.Doors)
+            {
+                if (doorN==doorName)
+                {
+                    badges.Doors.Remove(doorN);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
