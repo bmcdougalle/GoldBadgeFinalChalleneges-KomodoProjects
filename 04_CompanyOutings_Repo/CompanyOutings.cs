@@ -15,6 +15,7 @@ namespace _04_CompanyOutings_Repo
     }
      public class CompanyOutings
      {
+        public string EventName { get; set; }
         public EventType TypeOfEvent { get; set; }
         public int NumberOfAttendees { get; set; }
         public DateTime EventDate { get; set; }
@@ -23,8 +24,9 @@ namespace _04_CompanyOutings_Repo
 
 
         public CompanyOutings() { }
-        public CompanyOutings(EventType eventType, int numberOfAttendes, DateTime eventDate, decimal totalCostPerPerson, decimal totalCostOfEvent)
+        public CompanyOutings(string eventName, EventType eventType, int numberOfAttendes, DateTime eventDate, decimal totalCostPerPerson, decimal totalCostOfEvent)
         {
+            EventName = eventName;
             TypeOfEvent = eventType;
             NumberOfAttendees = numberOfAttendes;
             EventDate = eventDate;
