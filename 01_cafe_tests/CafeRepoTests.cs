@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Cafe;
+using System.Collections.Generic;
 
 namespace _01_cafe_tests
 {
@@ -14,7 +15,9 @@ namespace _01_cafe_tests
         public void Arrange()
         {
             _repo = new Cafe_Repo();
-            _item = new MenuItem();
+            _item = new MenuItem(1, "Hot Coffee", "Medium Roast Coffee with your choice of creamer", 0.55,
+                new List<string>() { "medium roast coffee grounds", "your choice of creamer" });
+            _repo.CreateItem(_item);
         }
         //add
         [TestMethod]
@@ -47,10 +50,41 @@ namespace _01_cafe_tests
 
 
         [TestMethod]
-        public void TestUpdateMethod()
+        public void TestUpdateMethod_ShouldReturnTrue()
         {
-            MenuItem item = new MenuItem();
-            Cafe_Repo cafe = new Cafe_Repo();
+            //arrange
+            //TestInitialize
+            MenuItem newItem = new MenuItem(1,"Hot Coffee3", "Medium Roast Coffee with your choice of creamer", 0.55,
+                new List<string>() { "medium roast coffee grounds", "your choice of creamer" });
+            //act
+            bool updateResult = _repo.UpdateMenuItems(1, newItem);
+
+            //assert
+            Assert.IsTrue(updateResult);
+        }
+
+        [TestMethod]
+        public void TestGetItemBYID_ShouldReturnNOtNUll()
+        {
+            //arrange
+            //TestInitialize
+            MenuItem item = new MenuItem(1, "Hot Coffee", "Medium Roast Coffee with your choice of creamer", 0.55,
+                new List<string>() { "medium roast coffee grounds", "your choice of creamer" });
+            _repo.GetItem(1);
+
+            Assert.IsNotNull(item);
+        }
+
+        [TestMethod]
+        public void TestDeleteMethod_ShouldReturnNotNUll()
+        {
+            //arrange
+
+            //act
+            bool deleteResult = _repo.DeleteItems(_item.ItemNumber);
+
+            //assert
+            Assert.IsTrue(deleteResult);
         }
     }
 }

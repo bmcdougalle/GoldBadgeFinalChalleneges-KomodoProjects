@@ -12,3 +12,5 @@ C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallen
 C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\02_ClaimsDepartment_Tests\obj\Debug\02_ClaimsDepartment_Tests.csproj.CopyComplete
 C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\02_ClaimsDepartment_Tests\obj\Debug\02_ClaimsDepartment_Tests.dll
 C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\02_ClaimsDepartment_Tests\obj\Debug\02_ClaimsDepartment_Tests.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\02_ClaimsDepartment_Tests\bin\Debug\ClaimsDepartment.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\02_ClaimsDepartment_Tests\bin\Debug\ClaimsDepartment.pdb
