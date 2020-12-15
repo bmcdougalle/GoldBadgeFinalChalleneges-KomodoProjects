@@ -172,19 +172,7 @@ namespace _03_badges_Console
 
             }
         }
-        //private void ShowDoorAccess(int doorName)
-        //{
-        //    Dictionary<int, Badges> doors = badges_Repo.ShowAllBadges();
-
-        //    foreach (var item in doors.Values)
-        //    {
-        //        foreach (var door in item.Doors)
-        //        {
-        //            Console.WriteLine(door);
-        //        }
-        //    }
-
-        //}
+        
 
         private void ShowDoorAccess(Badges badges)
         {
