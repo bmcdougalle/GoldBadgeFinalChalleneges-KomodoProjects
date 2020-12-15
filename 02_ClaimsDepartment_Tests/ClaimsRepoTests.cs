@@ -46,7 +46,24 @@ namespace _02_ClaimsDepartment_Tests
         [TestMethod]
         public void TestUpdateMethod_ShouldReturnTrue()
         {
+            Claims newClaim = new Claims(1, ClaimType.Car, "Smash: font end damage", 5000.00m, DateTime.Parse("2020 / 02 / 05"), DateTime.Parse("2020 / 02 / 27"), true);
+            bool shouldupdate = _claims_Repo.UpdateClaim(1, newClaim);
 
+            Assert.IsTrue(shouldupdate);
+        }
+        [TestMethod]
+        public void TestDeleteMethod_ShouldReturnTrue()
+        {
+            bool deleteResult = _claims_Repo.RemoveClaim(_claim.ClaimID);
+            Assert.IsTrue(deleteResult);
+        }
+        [TestMethod]
+        public void TestHelperMethod_ShouldGetNotNUll()
+        {
+            Claims claim = new Claims(1, ClaimType.Car, "Collision: font end damage", 5000.00m, DateTime.Parse("2020 / 02 / 05"), DateTime.Parse("2020 / 02 / 27"), true);
+            _claims_Repo.GetClaimByID(1);
+
+            Assert.IsNotNull(claim);
         }
     }
 }

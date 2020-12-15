@@ -76,7 +76,7 @@ namespace _01_cafe_tests
         }
 
         [TestMethod]
-        public void TestDeleteMethod_ShouldReturnNotNUll()
+        public void TestDeleteMethod_ShouldReturntrue()
         {
             //arrange
 
