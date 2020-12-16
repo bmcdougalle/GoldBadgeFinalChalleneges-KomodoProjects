@@ -1,0 +1,6 @@
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\04_CompanyOutings_Repo\bin\Debug\04_CompanyOutings_Repo.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\04_CompanyOutings_Repo\bin\Debug\04_CompanyOutings_Repo.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\04_CompanyOutings_Repo\obj\Debug\04_CompanyOutings_Repo.csprojAssemblyReference.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\04_CompanyOutings_Repo\obj\Debug\04_CompanyOutings_Repo.csproj.CoreCompileInputs.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\04_CompanyOutings_Repo\obj\Debug\04_CompanyOutings_Repo.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\DotNetProjects\GoldBadge_FinalChallenges\KomodoProjects\04_CompanyOutings_Repo\obj\Debug\04_CompanyOutings_Repo.pdb

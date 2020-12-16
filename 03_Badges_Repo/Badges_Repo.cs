@@ -13,16 +13,16 @@ namespace _03_Badges_Repo
         public void AddBadgesToDict( Badges badge)
         {
             Count++;
-            badge.BadgeID = Count;
             _Badges.Add(Count, badge);
         }
         public Dictionary<int, Badges> ShowAllBadges()
         {
             return _Badges;
         }
-        public bool UpdateBadges(int badgeId, Badges newBadge)
+
+        public bool UpdateBadges(int dictKey, Badges newBadge)
         {
-            Badges oldBadge = GetBadgeById(badgeId);
+            Badges oldBadge = GetBadgeById(dictKey);
             if(oldBadge != null)
             {
                 oldBadge.Doors = newBadge.Doors;

@@ -63,13 +63,6 @@ namespace _04_CompanyOutings_Repo
             }
         }
 
-
-
-
-
-
-
-
         public CompanyOutings GetOuting(string eventName)
         {
             foreach (var outing in _companyOutings)

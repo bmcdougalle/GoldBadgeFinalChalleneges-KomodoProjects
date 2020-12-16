@@ -10,7 +10,7 @@ namespace _04_CompanyOutings_Console
    {
         public void Run()
         {
-
+            Menu();
         }
         private void Menu()
         {

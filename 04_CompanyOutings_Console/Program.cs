@@ -10,7 +10,7 @@ namespace _04_CompanyOutings_Console
     {
         static void Main(string[] args)
         {
-            OutingsUI outingsUI = new OutingsUI;
+            OutingsUI outingsUI = new OutingsUI();
             outingsUI.Run();
         }
     }

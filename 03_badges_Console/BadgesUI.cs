@@ -52,6 +52,11 @@ namespace _03_badges_Console
         {
             Console.Clear();
             Badges badge = new Badges();
+            Console.WriteLine("Please input a BadgeId");
+            
+            int inputBadgeId = int.Parse(Console.ReadLine());
+            badge.BadgeID = inputBadgeId;
+
             AddDoorAccess(badge);
             badges_Repo.AddBadgesToDict( badge);
         }
@@ -176,46 +181,35 @@ namespace _03_badges_Console
 
         private void ShowDoorAccess(Badges badges)
         {
-            Console.WriteLine($"{badges.BadgeID}");
+            Console.WriteLine($"BadgeId : {badges.BadgeID}");
             foreach (var door in badges.Doors)
             {
-                Console.WriteLine(door);
+                Console.WriteLine($"Door Name: {door}");
             }
         }
         private void ViewAllBadges()
         {
             Console.Clear();
            Dictionary<int, Badges> _badges = badges_Repo.ShowAllBadges();
-            string[] headerColumns = { "Door Access", "BadgeId" };
-            Console.WriteLine("{0,5} {1, 5}", headerColumns[0], headerColumns[1]);
+           // string[] headerColumns = { "Door Access", "BadgeId" };
+           // Console.WriteLine("{0,5} {1, 5}", headerColumns[0], headerColumns[1]);
             foreach(var badge in _badges)
-            { 
-                foreach (var door in badge.Value.Doors)
-                {
-                    Console.WriteLine( door);
-                }
+            {
+                Console.WriteLine(badge.Key);
+                ShowDoorAccess(badge.Value);
 
-                Console.WriteLine("{0,15}", badge.Value.BadgeID);
+               // Console.WriteLine("{0,15}", badge.Value.BadgeID);
             }
 
 
         }
         private void SeedList()
         {
-            List<string> doors = new List<string>();
-            doors.Add("A5");
-            doors.Add("C10");
-
-            List<string> doors1 = new List<string>();
-            doors.Add("A5");
-            doors.Add("C10");
-
-            List<string> doors2 = new List<string>();
-            doors.Add("A5");
-            doors.Add("C10");
-            Badges badge1 = new Badges( doors);
-            Badges badge2 = new Badges( doors1);
-            Badges badge3 = new Badges( doors2);
+           
+            Badges badge1 = new Badges(1,new List<string> { "A5","C10" });
+            Badges badge2 = new Badges(300,new List<string> { "A7","C1" });
+            Badges badge3 = new Badges(12,new List<string> { "A9","C101" });
+            
 
             badges_Repo.AddBadgesToDict( badge1);
             badges_Repo.AddBadgesToDict( badge2);

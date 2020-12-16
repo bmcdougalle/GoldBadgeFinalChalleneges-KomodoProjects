@@ -31,8 +31,19 @@ namespace _01_cafe_tests
             //act -->get run the code
             cafe.CreateItem(item);
             MenuItem itemFromDirectory = cafe.GetItem(4);
+            List<MenuItem> menuItems = cafe.GetMenuItems();
 
-            Assert.IsNotNull(itemFromDirectory);
+            bool iscorrect = false;
+            foreach(MenuItem menuItem in menuItems)
+            {
+                if(menuItem.ItemNumber == item.ItemNumber)
+                {
+                    iscorrect = true;
+                    break;
+                }
+            }
+
+            Assert.IsTrue(iscorrect);
         }
 
 
@@ -43,8 +54,9 @@ namespace _01_cafe_tests
             MenuItem menu = new MenuItem();
             Cafe_Repo cafe = new Cafe_Repo();
 
-            cafe.GetMenuItems();
+           List<MenuItem> menuItems = cafe.GetMenuItems();
 
+            Assert.IsNotNull(menuItems);
         }
 
 
@@ -67,11 +79,14 @@ namespace _01_cafe_tests
         public void TestGetItemBYID_ShouldReturnNOtNUll()
         {
             //arrange
-            //TestInitialize
             MenuItem item = new MenuItem(1, "Hot Coffee", "Medium Roast Coffee with your choice of creamer", 0.55,
                 new List<string>() { "medium roast coffee grounds", "your choice of creamer" });
-            _repo.GetItem(1);
+             _repo.GetItem(1);
+            //TestInitialize
 
+            ///act
+            MenuItem menuItem = _repo.GetItem(1);
+            //assert
             Assert.IsNotNull(item);
         }
 
