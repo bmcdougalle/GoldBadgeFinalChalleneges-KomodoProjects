@@ -92,15 +92,19 @@ namespace _03_badges_Console
                switch (choiceUser)
                {
                     case "1":
+                        Console.Clear();
+                        ShowDoorAccess(badge);
                         AddDoorAccess(badge);
                         break;
                     case "2":
-                        
+                        Console.Clear();
+                        ShowDoorAccess(badge);
                         RemoveDoorAccess();
                         validInput = false;
                         RevealDoors = false;
                         break;
                     case "3":
+                        Console.Clear();
                         Menu();
                         RevealDoors = false;
                         break;

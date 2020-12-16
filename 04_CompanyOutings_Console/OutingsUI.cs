@@ -22,6 +22,21 @@ namespace _04_CompanyOutings_Console
                                   $"2. Add Outing\n" +
                                   $"3. Calculations\n" +
                                   $"4. exit");
+                string userChoice = Console.ReadLine();
+                switch (userChoice)
+                {
+                    case "1":
+                        //displayoutings
+                        break;
+                    case "2":
+                        //addouting
+                        break;
+                    case "3":
+                        //calculations
+                        break;
+                    case "4":
+
+                }
             }
         }
    }
