@@ -57,5 +57,20 @@ namespace _03_Badges_test
 
 
         }
+
+        [TestMethod]
+        public void TestRemoveBadge_ShouldReturnTrue()
+        {
+            bool deletionResult = _repo.RemoveBadge(1);
+            Assert.IsTrue(deletionResult);
+            
+        }
+
+        [TestMethod]
+        public void TestGetBadgeByIdMethod_ShouldGetNotNull()
+        {
+            Badges badge =  _repo.GetBadgeById(1);
+            Assert.IsNotNull(badge);
+        }
     }
 }
