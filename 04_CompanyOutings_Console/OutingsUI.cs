@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _04_CompanyOutings_Repo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace _04_CompanyOutings_Console
 {
    public class OutingsUI
    {
+    
+        private readonly companyOutings_Repo repo = new companyOutings_Repo();
         public void Run()
         {
             Menu();
@@ -35,8 +38,19 @@ namespace _04_CompanyOutings_Console
                         //calculations
                         break;
                     case "4":
-
+                        Console.WriteLine("Have a Nice Day!");
+                        ShowMenu = false;
+                        break;
                 }
+            }
+        }
+        private void DisplayOutings()
+        {
+            Console.Clear();
+            List<CompanyOutings> companyOutings = repo.ShowCompanyOutings();
+            foreach(CompanyOutings outing in companyOutings)
+            {
+                Console.WriteLine($"");
             }
         }
    }

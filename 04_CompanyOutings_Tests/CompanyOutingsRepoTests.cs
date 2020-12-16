@@ -21,7 +21,7 @@ namespace _04_CompanyOutings_Tests
             companyOutings_Repo outings_Repo = new companyOutings_Repo();
 
             outings_Repo.AddOuting(outing);
-            CompanyOutings outingFromList = outings_Repo.GetOuting("BobEvansOuting");
+            CompanyOutings outingFromList = outings_Repo.GetOuting("1");
 
             Assert.IsNotNull(outingFromList);
         }
