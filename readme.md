@@ -10,21 +10,21 @@
 ***
 
 Here is a link to the Repo on [Github](https://github.com/bmcdougalle/GoldBadgeFinalChalleneges-KomodoProjects "Komodo Management System") 😃..  
-### Here is a small outline of the files
+### This is a small outline of the Assemblies
 
 
   01_Cafe..  
   * cafe.cs..  
- Cafe_Repo.cs_.. 
+ Cafe_Repo.cs..   
 
  01_Cafe_Console..  
   * Program.cs ..  
    ProgramUI.. 
 
-   01_Cafe_Tests..  
+01_Cafe_Tests..  
   * CafeRepoTests.cs..  
 
-   02_ClaimsDepartment.. 
+02_ClaimsDepartment.. 
    * Claims.cs..  
     Claims_repo.cs.. 
 
@@ -32,7 +32,7 @@ Here is a link to the Repo on [Github](https://github.com/bmcdougalle/GoldBadgeF
  * ClaimsUI.cs..  
   Program.cs.. 
 
-  02_ClaimsDepartment_Tests..  
+02_ClaimsDepartment_Tests..  
    * ClaimsRepoTests.cs.. 
 
  03_badges_Console..  
@@ -45,6 +45,21 @@ Here is a link to the Repo on [Github](https://github.com/bmcdougalle/GoldBadgeF
 
 03_Badges_Tests..  
  * BadgesRepoTests.cs..  
+
+04_CompanyOutings_Repo
+* CompanyOutings.cs..  
+companyOutings_Repo.cs..  
+
+04_CompanyOutings_console..  
+
+*  OutingsUI.cs..  
+* Program.cs
+
+04_CompanyOutings_Tests..  
+* CompanyOutingsRepo_Tests.cs..  
+
+
+
 
 
 
