@@ -9,17 +9,15 @@ namespace ClaimsDepartment
     public class Claims_repo
     {
        private readonly Queue<Claims> _Claims = new Queue<Claims>();
-        //create
         public void AddAClaim(Claims claim)
         {
             _Claims.Enqueue(claim);
         } 
-        //read
+        
         public Queue<Claims> ViewClaims()
         {
            return _Claims;
         }
-        //update
 
         public bool UpdateClaim(int claimId, Claims claim)
         {
@@ -40,7 +38,6 @@ namespace ClaimsDepartment
                 return false;
             }
         }
-        //delete
         public bool RemoveClaim(int claimId)
         {
             Claims claim = GetClaimByID(claimId);
@@ -62,9 +59,6 @@ namespace ClaimsDepartment
             }
         }
 
-
-
-        //helper
         public Claims GetClaimByID(int claimId)
         {
             foreach (var claim in _Claims)

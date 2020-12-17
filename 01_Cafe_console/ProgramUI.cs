@@ -1,9 +1,6 @@
 ﻿using Cafe;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01_Cafe_console
 {
@@ -16,7 +13,6 @@ namespace _01_Cafe_console
             SeedList();
             CafeMenu();
         }
-        //menu
 
         private void CafeMenu()
         {
@@ -50,7 +46,7 @@ namespace _01_Cafe_console
                         Console.WriteLine("Have Wonderful Day!");
                         showing = false;
                         break;
-                    
+
                 }
                 Console.WriteLine("Press Any Key to Continue");
                 Console.ReadKey();
@@ -90,7 +86,7 @@ namespace _01_Cafe_console
                     string listOfIngredients = Console.ReadLine();
                     menuItem.Ingredients.Add(listOfIngredients);
                 }
-                if(input == "N" || input == "n")
+                if (input == "N" || input == "n")
                 {
                     _cafe_Repo.CreateItem(menuItem);
                     hasIngredients = true;
@@ -98,21 +94,21 @@ namespace _01_Cafe_console
             }
 
 
-            
+
         }
         private void ViewAllItems()
         {
             Console.Clear();
             List<MenuItem> menuItems = _cafe_Repo.GetMenuItems();
-            foreach(MenuItem menuItem in menuItems)
+            foreach (MenuItem menuItem in menuItems)
             {
                 Console.WriteLine($"Item Number: {menuItem.ItemNumber}\n\n" +
                                   $"Item Name:  {menuItem.ItemName}\n\n" +
                                   $"Item Decription: {menuItem.Description}\n\n" +
                                   $"Item Price: {menuItem.Price}\n\n" +
 
-                                  $"***************************************\n"); 
-                                  foreach (var item in menuItem.Ingredients)
+                                  $"***************************************\n");
+                foreach (var item in menuItem.Ingredients)
                 {
                     Console.WriteLine($"Item Ingredients: {item}\n");
                 }
@@ -173,10 +169,10 @@ namespace _01_Cafe_console
         private void SeedList()
         {
             MenuItem HotCoffee = new MenuItem(1, "Hot Coffee", "Medium Roast Coffee with your choice of creamer", 0.55,
-                new List<string>() { "medium roast coffee grounds", "your choice of creamer"});
+                new List<string>() { "medium roast coffee grounds", "your choice of creamer" });
             MenuItem NachosNCheese = new MenuItem(2, "Nachos N Cheese", "Nacho chips, fresh Queso", 4.50,
                 new List<string>() { "chips", "fresh", "queso with pepperJack cheese" });
-            MenuItem CheeseBurger = new MenuItem(3, "Cheeseburger Deluxe", "Delicious Freshly made Cheeseburger with your choice of toppings.", 5.95, 
+            MenuItem CheeseBurger = new MenuItem(3, "Cheeseburger Deluxe", "Delicious Freshly made Cheeseburger with your choice of toppings.", 5.95,
                 new List<string>() { "Ground Chuck hamburger", "pepper", "meat tenderizer", "tomato", "lettuce", "onion", "your cheese of American, PepperJack, Colby Jack cheese" });
 
             _cafe_Repo.CreateItem(HotCoffee);

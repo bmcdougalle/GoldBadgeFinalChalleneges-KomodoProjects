@@ -1,9 +1,6 @@
 ﻿using _03_Badges_Repo;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _03_badges_Console
 {
@@ -53,12 +50,12 @@ namespace _03_badges_Console
             Console.Clear();
             Badges badge = new Badges();
             Console.WriteLine("Please input a BadgeId");
-            
+
             int inputBadgeId = int.Parse(Console.ReadLine());
             badge.BadgeID = inputBadgeId;
 
             AddDoorAccess(badge);
-            badges_Repo.AddBadgesToDict( badge);
+            badges_Repo.AddBadgesToDict(badge);
         }
         private void UpdateABadge()
         {
@@ -68,29 +65,29 @@ namespace _03_badges_Console
             bool validInput = true;
             while (validInput)
             {
-                if(!int.TryParse(inputId, out int badgeId))
+                if (!int.TryParse(inputId, out int badgeId))
                 {
                     Console.WriteLine("Please Enter a Valid ID Number");
                 }
                 else
                 {
                     inputId = badgeId.ToString();
-                    badge =badges_Repo.GetBadgeById(badgeId);
+                    badge = badges_Repo.GetBadgeById(badgeId);
                     validInput = false;
                 }
-               ShowDoorAccess(badge);
+                ShowDoorAccess(badge);
             }
             bool RevealDoors = true;
-            while(RevealDoors)
+            while (RevealDoors)
             {
-               
+
                 Console.WriteLine("What Would You Like To DO?\n\n" +
                               "1. Add Door\n" +
                               "2. Remove Door\n" +
                               "3. Exit");
                 string choiceUser = Console.ReadLine();
-               switch (choiceUser)
-               {
+                switch (choiceUser)
+                {
                     case "1":
                         Console.Clear();
                         ShowDoorAccess(badge);
@@ -108,8 +105,8 @@ namespace _03_badges_Console
                         Menu();
                         RevealDoors = false;
                         break;
-                    
-               }
+
+                }
             }
         }
         private void AddDoorAccess(Badges badges)
@@ -117,7 +114,7 @@ namespace _03_badges_Console
             bool addDoor = true;
             while (addDoor)
             {
-               
+
                 Console.WriteLine("What Door Would You Like to add?");
                 string usersInput = Console.ReadLine();
                 badges.Doors.Add(usersInput);
@@ -143,19 +140,19 @@ namespace _03_badges_Console
                         Console.WriteLine("Please enter y/n");
                     }
                 }
-                
+
             }
-            
+
 
         }
         private void RemoveDoorAccess()
         {
-            
-           
+
+
             bool doorRemoval = true;
             while (doorRemoval)
             {
-               
+
                 Console.WriteLine("Please input a Badge Id");
                 int inputDoor = int.Parse(Console.ReadLine());
 
@@ -165,9 +162,9 @@ namespace _03_badges_Console
                 string inputDoorName = Console.ReadLine();
 
                 bool isSuccessful = badges_Repo.RemoveDoor(badges, inputDoorName);
-               
 
-                if(isSuccessful )
+
+                if (isSuccessful)
                 {
                     Console.WriteLine("Door was Removed");
                     doorRemoval = false;
@@ -177,11 +174,11 @@ namespace _03_badges_Console
                     Console.WriteLine("Could Not Remove");
                     doorRemoval = false;
                 }
-                
+
 
             }
         }
-        
+
 
         private void ShowDoorAccess(Badges badges)
         {
@@ -194,30 +191,26 @@ namespace _03_badges_Console
         private void ViewAllBadges()
         {
             Console.Clear();
-           Dictionary<int, Badges> _badges = badges_Repo.ShowAllBadges();
-           // string[] headerColumns = { "Door Access", "BadgeId" };
-           // Console.WriteLine("{0,5} {1, 5}", headerColumns[0], headerColumns[1]);
-            foreach(var badge in _badges)
+            Dictionary<int, Badges> _badges = badges_Repo.ShowAllBadges();
+            foreach (var badge in _badges)
             {
                 Console.WriteLine(badge.Key);
                 ShowDoorAccess(badge.Value);
 
-               // Console.WriteLine("{0,15}", badge.Value.BadgeID);
             }
-
 
         }
         private void SeedList()
         {
-           
-            Badges badge1 = new Badges(1,new List<string> { "A5","C10" });
-            Badges badge2 = new Badges(300,new List<string> { "A7","C1" });
-            Badges badge3 = new Badges(12,new List<string> { "A9","C101" });
-            
 
-            badges_Repo.AddBadgesToDict( badge1);
-            badges_Repo.AddBadgesToDict( badge2);
-            badges_Repo.AddBadgesToDict( badge3);
+            Badges badge1 = new Badges(1, new List<string> { "A5", "C10" });
+            Badges badge2 = new Badges(300, new List<string> { "A7", "C1" });
+            Badges badge3 = new Badges(12, new List<string> { "A9", "C101" });
+
+
+            badges_Repo.AddBadgesToDict(badge1);
+            badges_Repo.AddBadgesToDict(badge2);
+            badges_Repo.AddBadgesToDict(badge3);
         }
     }
 }

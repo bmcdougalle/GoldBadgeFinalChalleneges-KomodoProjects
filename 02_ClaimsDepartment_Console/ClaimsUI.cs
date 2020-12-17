@@ -1,14 +1,11 @@
 ﻿using ClaimsDepartment;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _02_ClaimsDepartment_Console
 {
-   public class ClaimsUI
-   {
+    public class ClaimsUI
+    {
         private readonly Claims_repo claims_Repo = new Claims_repo();
 
         public void Run()
@@ -54,9 +51,8 @@ namespace _02_ClaimsDepartment_Console
             Console.Clear();
             Queue<Claims> _claims = claims_Repo.ViewClaims();
             string[] headerColumns = { "Claim ID", "Claim Type", "Claim Description", "Claim Amount", "Date Of Incident", "Date Of Claim", "Is This A Valid Claim?" };
-            //Console.WriteLine("{0, 8} {1, 8} {2, 35}  {3, 10} {4, 20} {5, 20} {6, 15}", headerColumns[0], headerColumns[1], headerColumns[2], headerColumns[3], headerColumns[4], headerColumns[5], headerColumns[6]);
             Console.WriteLine("{0,10} {1, 20} {2,30}  {3, 10} {4, 25} {5, 25} {6, 35}", headerColumns[0], headerColumns[1], headerColumns[2], headerColumns[3], headerColumns[4], headerColumns[5], headerColumns[6]);
-            //Console.WriteLine(header);
+
             foreach (var claim in _claims)
             {
                 int id = claim.ClaimID;
@@ -69,10 +65,10 @@ namespace _02_ClaimsDepartment_Console
 
 
                 Console.WriteLine($"{id,10} { type,20}  { description,30} { amount,10} { dateOfIncident,30} { dateOfClaim,30} { isValid,15}");
-                
-               
+
+
             }
-            
+
         }
         private void TakeCareOfNextClaim()
         {
@@ -87,12 +83,12 @@ namespace _02_ClaimsDepartment_Console
                               $"Is This Claim Valid?: {claim.IsValid}");
             Console.WriteLine("Would you like to take care of this claim?");
             string inputChoice = Console.ReadLine();
-            if(inputChoice == "y" || inputChoice == "Y")
+            if (inputChoice == "y" || inputChoice == "Y")
             {
                 claims.Dequeue();
                 Menu();
             }
-            else if(inputChoice == "n" || inputChoice == "N")
+            else if (inputChoice == "n" || inputChoice == "N")
             {
                 Menu();
             }
@@ -100,20 +96,19 @@ namespace _02_ClaimsDepartment_Console
             {
                 Console.WriteLine("Please Enter a valid Response");
             }
-            
+
         }
         private void EnterANewClaim()
         {
             Console.Clear();
             Claims claim = new Claims();
-            //Queue<Claims> _Claims= new Queue<Claims>();
 
             Console.WriteLine("Enter The Claim ID");
             string userInput = Console.ReadLine();
             int claimId;
-            if(int.TryParse(userInput, out claimId)) 
+            if (int.TryParse(userInput, out claimId))
             {
-                if(claimId < 1 || claimId > 100)
+                if (claimId < 1 || claimId > 100)
                 {
                     Console.WriteLine("Sorry idNumber was out of range");
                 }
@@ -122,7 +117,7 @@ namespace _02_ClaimsDepartment_Console
                     claim.ClaimID = claimId;
                 }
             }
-           
+
 
             bool validInput = false;
             int validSelection = 0;
@@ -133,7 +128,7 @@ namespace _02_ClaimsDepartment_Console
                               "2. Home\n" +
                               "3. Theft");
                 string inputFromUser = Console.ReadLine();
-                if(!int.TryParse(inputFromUser, out validSelection))
+                if (!int.TryParse(inputFromUser, out validSelection))
                 {
                     Console.WriteLine("Input was not a valid selection");
                 }
@@ -208,7 +203,7 @@ namespace _02_ClaimsDepartment_Console
                 var timeSpan2 = 30;
                 var validClaim = DateTime.Now - claim.DateOfClaim;
                 var timeSpan = validClaim.TotalDays;
-                if(timeSpan > timeSpan2)
+                if (timeSpan > timeSpan2)
                 {
                     claim.IsValid = isNotValid;
                     isValidNow = true;
@@ -221,9 +216,9 @@ namespace _02_ClaimsDepartment_Console
                 }
             }
             claims_Repo.AddAClaim(claim);
-            
-            
-            
+
+
+
 
 
         }
@@ -240,5 +235,5 @@ namespace _02_ClaimsDepartment_Console
             claims_Repo.AddAClaim(claim3);
             claims_Repo.AddAClaim(claim4);
         }
-   }
+    }
 }
