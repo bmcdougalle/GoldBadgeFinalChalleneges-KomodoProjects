@@ -13,6 +13,7 @@ namespace _04_CompanyOutings_Console
         private readonly companyOutings_Repo repo = new companyOutings_Repo();
         public void Run()
         {
+            SeedList();
             Menu();
         }
         private void Menu()
@@ -29,19 +30,22 @@ namespace _04_CompanyOutings_Console
                 switch (userChoice)
                 {
                     case "1":
-                        //displayoutings
+                        DisplayOutings();
                         break;
                     case "2":
-                        //addouting
+                        AddOuting();
                         break;
                     case "3":
-                        //calculations
+                        Calculations();
                         break;
                     case "4":
                         Console.WriteLine("Have a Nice Day!");
                         ShowMenu = false;
                         break;
                 }
+                Console.WriteLine("Press any key to continue");
+                Console.ReadKey();
+                Console.Clear();
             }
         }
         private void DisplayOutings()
@@ -161,8 +165,49 @@ namespace _04_CompanyOutings_Console
         }
         private void Calculations()
         {
+            bool CMenu = true;
+            while (CMenu)
+            {
+                Console.Clear();
+                Console.WriteLine("What Would you like to see?\n\n" +
+                              "1. Combined Cost for all Outings\n" +
+                              "2. Outings Cost by Type\n" +
+                              "3. Exit");
+                string userOption = Console.ReadLine();
+                switch (userOption)
+                {
+                    case "1":
+                        CombinedCost();
+                        break;
+                    case "2":
+                        //outings by type
+                        break;
+                    case "3":
+                        CMenu = false;
+                        Console.Clear();
+                        Menu();
+                        break;
+                }
+            }
+        }
+        //needs work/doesn't Display
+        private void CombinedCost()
+        {
+            DisplayOutings();
+
+            CompanyOutings outings = new CompanyOutings();
+            decimal cCost = outings.TotalCostOFEvent + outings.TotalCostOFEvent;
+            Console.WriteLine(cCost);
+        }
+        private void SeedList()
+        {
+            CompanyOutings WorkPlaceJam = new CompanyOutings("WorkPlaceJam", EventType.Concert, 20, DateTime.Parse("2021 / 05 / 22"), 20, 1000);
+            CompanyOutings AtKingsIsland = new CompanyOutings("Claims For Coasters", EventType.AmusementPark, 50, DateTime.Parse("2021 / 08 / 10"), 60, 5000);
+
+
+            repo.AddOuting(WorkPlaceJam);
+            repo.AddOuting(AtKingsIsland);
 
         }
-        private void SeedList() { }
    }
 }

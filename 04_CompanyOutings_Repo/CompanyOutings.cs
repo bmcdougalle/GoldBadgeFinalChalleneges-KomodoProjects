@@ -30,7 +30,8 @@ namespace _04_CompanyOutings_Repo
             TypeOfEvent = eventType;
             NumberOfAttendees = numberOfAttendes;
             EventDate = eventDate;
-            TotalCostPerPerson = totalCostOfEvent;
+            TotalCostPerPerson = totalCostPerPerson;
+            TotalCostOFEvent = totalCostOfEvent;
 
         }
      }
