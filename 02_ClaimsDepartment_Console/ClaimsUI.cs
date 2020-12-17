@@ -193,15 +193,13 @@ namespace _02_ClaimsDepartment_Console
                     validDateOfClaim = true;
                 }
             }
-
-            DateTime current = DateTime.Now;
             bool isValidNow = false;
             while (!isValidNow)
             {
                 bool isvalid = true;
-                bool isNotValid = true;
+                bool isNotValid = false;
                 var timeSpan2 = 30;
-                var validClaim = DateTime.Now - claim.DateOfClaim;
+                var validClaim = claim.DateOfClaim - claim.DateOfIncident;
                 var timeSpan = validClaim.TotalDays;
                 if (timeSpan > timeSpan2)
                 {
