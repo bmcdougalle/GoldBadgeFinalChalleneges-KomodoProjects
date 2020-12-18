@@ -86,8 +86,9 @@ namespace _04_CompanyOutings_Console
                 {
                     Console.WriteLine("Invalid Option, please try again");
                 }
-                else if (choice.Equals(0))
+                else if (choice < 1 || choice > 4)
                 {
+                    
                     Console.WriteLine("Incorrect selection");
                 }
                 else

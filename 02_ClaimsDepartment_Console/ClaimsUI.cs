@@ -106,17 +106,15 @@ namespace _02_ClaimsDepartment_Console
             Console.WriteLine("Enter The Claim ID");
             string userInput = Console.ReadLine();
             int claimId;
-            if (int.TryParse(userInput, out claimId))
+            if (!int.TryParse(userInput, out claimId))
             {
-                if (claimId < 1 || claimId > 100)
-                {
-                    Console.WriteLine("Sorry idNumber was out of range");
-                }
-                else
-                {
-                    claim.ClaimID = claimId;
-                }
+                Console.WriteLine("Please Try Again");
             }
+            else
+            {
+                claim.ClaimID = claimId;
+            }
+            
 
 
             bool validInput = false;
@@ -132,7 +130,7 @@ namespace _02_ClaimsDepartment_Console
                 {
                     Console.WriteLine("Input was not a valid selection");
                 }
-                else if (validSelection.Equals(0))
+                else if (validSelection < 1 || validSelection > 3)
                 {
                     Console.WriteLine("Please enter a valid selection");
                 }
